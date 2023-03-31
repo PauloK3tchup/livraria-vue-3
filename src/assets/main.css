@@ -15,3 +15,42 @@ a,
   transition: 0.4s;
 }
 
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid hsla(160, 100%, 37%, 1);
+  border-radius: 0.25rem;
+  background: hsla(160, 49%, 11%);
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  margin: 5px;
+}
+
+.btn:hover {
+  border: 1px solid hsla(160, 49%, 11%);
+  background: hsla(160, 100%, 37%, 1);
+  color: hsl(160, 49%, 11%);
+  transform: scale(1.1);
+}
+
+.btn:active {
+  transform: scale(0.9);
+}
+
+.inputEnviar{
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid hsla(160, 100%, 37%, 1);
+  border-radius: 0.25rem;
+  background: hsla(160, 49%, 11%);
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  margin: 5px;
+}
+
+.inputEnviar:focus {
+  border: 1px solid hsla(160, 49%, 11%);
+  background: hsla(160, 100%, 37%, 1);
+  color: hsla(160, 49%, 11%);
+
+}

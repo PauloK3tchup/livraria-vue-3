@@ -36,8 +36,13 @@ export default {
   <h1>Categoria</h1>
   <hr />
   <div class="form">
-    <input type="text" v-model="categoria.descricao" placeholder="Descrição" />
-    <button @click="salvar">Salvar Categoria</button>
+    <input
+      class="inputEnviar"
+      type="text"
+      v-model="categoria.descricao"
+      placeholder="Descrição"
+    />
+    <button class="btn" @click="salvar">Salvar Categoria</button>
   </div>
   <hr />
   <ul>
@@ -45,7 +50,9 @@ export default {
       <span @click="editar(categoria)">
         ({{ categoria.id }}) - {{ categoria.descricao }} -
       </span>
-      <button @click="excluir(categoria)">X</button>
+      <button class="btn-excluir" @click="excluir(categoria)">
+        <font-awesome-icon :icon="['far', 'trash']" />
+      </button>
     </li>
   </ul>
 </template>
