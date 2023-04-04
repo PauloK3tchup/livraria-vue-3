@@ -54,3 +54,22 @@ a,
   color: hsla(160, 49%, 11%);
 
 }
+
+.btn-excluir {
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  transition: 0.25s;
+}
+
+.btn-excluir:hover {
+  background-color: rgb(92, 0, 0);
+  transform: scale(1.1);
+}
+
+.btn-excluir:active {
+  transform: scale(0.9);
+}

@@ -8,8 +8,10 @@ import "./plugins/axios";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faUserSecret } from "@fortawesome/free-solid-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faUserSecret);
+library.add(faUserSecret, faTrash, faFloppyDisk);
 
 import "./assets/main.css";
 

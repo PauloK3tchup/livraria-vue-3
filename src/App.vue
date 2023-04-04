@@ -4,7 +4,7 @@
     <span> | </span>
     <router-link to="/categorias">Categorias</router-link>
     <span> | </span>
-    <router-link to="/categorias">Editoras</router-link>
+    <router-link to="/editoras">Editoras</router-link>
     <span> | </span>
     <router-link to="/categorias">Autores</router-link>
     <span> | </span>

@@ -33,7 +33,7 @@ export default {
 </script>
 
 <template>
-  <h1>Categoria</h1>
+  <h1>Editoras</h1>
   <hr />
   <div class="form">
     <input
