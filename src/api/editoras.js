@@ -4,16 +4,16 @@ export default class EditorasApi {
     const { data } = await axios.get("/editoras/");
     return data;
   }
-  async adicionarCategoria(editora) {
+  async adicionarEditora(editora) {
     const { data } = await axios.post("/editoras/", editora);
     return data;
   }
-  async atualizarCategoria(editora) {
-    const { data } = await axios.put(`/categorias/${editora.id}/`, editora);
+  async atualizarEditora(editora) {
+    const { data } = await axios.put(`/editoras/${editora.id}/`, editora);
     return data;
   }
-  async excluirCategoria(id) {
-    const { data } = await axios.delete(`/categorias/${id}/`);
+  async excluirditora(id) {
+    const { data } = await axios.delete(`/editoras/${id}/`);
     return data;
   }
 }

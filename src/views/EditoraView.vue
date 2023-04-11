@@ -1,32 +1,32 @@
 <script>
-import CategoriasApi from "@/api/categorias";
-const categoriasApi = new CategoriasApi();
+import EditorasApi from "@/api/editoras";
+const editorasApi = new EditorasApi();
 export default {
   data() {
     return {
-      categorias: [],
-      categoria: {},
+      editoras: [],
+      editora: {},
     };
   },
   async created() {
-    this.categorias = await categoriasApi.buscarTodasAsCategorias();
+    this.editoras = await editorasApi.buscarTodasAsEditoras();
   },
   methods: {
     async salvar() {
-      if (this.categoria.id) {
-        await categoriasApi.atualizarCategoria(this.categoria);
+      if (this.editora.id) {
+        await editorasApi.atualizarEditora(this.editora);
       } else {
-        await categoriasApi.adicionarCategoria(this.categoria);
+        await editorasApi.adicionarEditora(this.editora);
       }
-      this.categoria = {};
-      this.categorias = await categoriasApi.buscarTodasAsCategorias();
+      this.editora = {};
+      this.editoras = await editorasApi.buscarTodasAsEditoras();
     },
-    editar(categoria) {
-      Object.assign(this.categoria, categoria);
+    editar(editora) {
+      Object.assign(this.editora, editora);
     },
-    async excluir(categoria) {
-      await categoriasApi.excluirCategoria(categoria.id);
-      this.categorias = await categoriasApi.buscarTodasAsCategorias();
+    async excluir(editora) {
+      await editorasApi.excluirEditora(editora.id);
+      this.editoras = await editorasApi.buscarTodasAsEditoras();
     },
   },
 };
@@ -39,24 +39,41 @@ export default {
     <input
       class="inputEnviar"
       type="text"
-      v-model="categoria.descricao"
-      placeholder="Descrição"
+      v-model="editora.nome"
+      placeholder="Nome da editora"
+    />
+    <input
+      class="inputEnviar"
+      type="text"
+      v-model="editora.site"
+      placeholder="Website da editora"
     />
     <button class="btn" @click="salvar">
-      <font-awesome-icon icon="fa-solid fa-floppy-disk" />
+      <font-awesome-icon icon="fa-solid fa-floppy-disk" /> <span>Salvar</span>
     </button>
   </div>
   <hr />
-  <ul>
-    <li v-for="categoria in categorias" :key="categoria.id">
-      <span @click="editar(categoria)">
-        ({{ categoria.id }}) - {{ categoria.descricao }} -
-      </span>
-      <button class="btn-excluir" @click="excluir(categoria)">
-        <font-awesome-icon icon="fa-trash" />
-      </button>
-    </li>
-  </ul>
+  <table>
+    <tr>
+      <th>Id da Editora</th>
+      <th>Nome</th>
+      <th>Website (Opcional)</th>
+      <th>Ação</th>
+    </tr>
+    <tr v-for="editora in editoras" :key="editora.id">
+      <td>{{ editora.id }}</td>
+      <td>{{ editora.nome }}</td>
+      <td>{{ editora.site }}</td>
+      <td>
+        <button class="btn-excluir" @click="excluir(editora)">
+          <font-awesome-icon icon="fa-trash" /> <span>Excluir</span>
+        </button>
+        <button class="btn-editar" @click="editar(editora)">
+          <font-awesome-icon icon="fa-pencil" /> <span>Editar</span>
+        </button>
+      </td>
+    </tr>
+  </table>
 </template>
 
 <style></style>

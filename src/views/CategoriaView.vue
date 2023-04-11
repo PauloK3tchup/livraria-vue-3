@@ -43,20 +43,29 @@ export default {
       placeholder="Descrição"
     />
     <button class="btn" @click="salvar">
-      <font-awesome-icon icon="fa-solid fa-floppy-disk" />
+      <font-awesome-icon icon="fa-solid fa-floppy-disk" /> <span>Salvar</span>
     </button>
   </div>
   <hr />
-  <ul>
-    <li v-for="categoria in categorias" :key="categoria.id">
-      <span @click="editar(categoria)">
-        ({{ categoria.id }}) - {{ categoria.descricao }} -
-      </span>
-      <button class="btn-excluir" @click="excluir(categoria)">
-        <font-awesome-icon icon="fa-trash" />
-      </button>
-    </li>
-  </ul>
+  <table>
+    <tr>
+      <th>Id da Categoria</th>
+      <th>Descrição</th>
+      <th>Ação</th>
+    </tr>
+    <tr v-for="categoria in categorias" :key="categoria.id">
+      <td>{{ categoria.id }}</td>
+      <td>{{ categoria.descricao }}</td>
+      <td>
+        <button class="btn-excluir" @click="excluir(categoria)">
+          <font-awesome-icon icon="fa-trash" /> <span>Excluir</span>
+        </button>
+        <button class="btn-editar" @click="editar(categoria)">
+          <font-awesome-icon icon="fa-pencil" /> <span>Editar</span>
+        </button>
+      </td>
+    </tr>
+  </table>
 </template>
 
 <style></style>

@@ -6,7 +6,7 @@
     <span> | </span>
     <router-link to="/editoras">Editoras</router-link>
     <span> | </span>
-    <router-link to="/categorias">Autores</router-link>
+    <router-link to="/autores">Autores</router-link>
     <span> | </span>
     <router-link to="/categorias">Livros</router-link>
   </header>

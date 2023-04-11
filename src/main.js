@@ -10,8 +10,9 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faUserSecret } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
+import { faPencil } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faUserSecret, faTrash, faFloppyDisk);
+library.add(faUserSecret, faTrash, faFloppyDisk, faPencil);
 
 import "./assets/main.css";
 
