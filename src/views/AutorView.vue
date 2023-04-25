@@ -9,7 +9,7 @@ export default {
     };
   },
   async created() {
-    this.autores = await autoresApi.buscarTodasAsAutores();
+    this.autores = await autoresApi.buscarTodosOsAutores();
   },
   methods: {
     async salvar() {
@@ -19,14 +19,14 @@ export default {
         await autoresApi.adicionarAutor(this.autor);
       }
       this.autor = {};
-      this.autores = await autoresApi.buscarTodasAsAutores();
+      this.autores = await autoresApi.buscarTodosOsAutores();
     },
     editar(autor) {
       Object.assign(this.autor, autor);
     },
     async excluir(autor) {
       await autoresApi.excluirAutor(autor.id);
-      this.autores = await autoresApi.buscarTodasAsAutores();
+      this.autores = await autoresApi.buscarTodosOsAutores();
     },
   },
 };

@@ -1,6 +1,6 @@
 import axios from "axios";
 export default class AutoresApi {
-  async buscarTodasAsAutores() {
+  async buscarTodosOsAutores() {
     const { data } = await axios.get("/autores/");
     return data;
   }

@@ -8,7 +8,7 @@
     <span> | </span>
     <router-link to="/autores">Autores</router-link>
     <span> | </span>
-    <router-link to="/categorias">Livros</router-link>
+    <router-link to="/livros">Livros</router-link>
   </header>
   <main>
     <RouterView />
