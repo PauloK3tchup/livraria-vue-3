@@ -41,6 +41,7 @@ export default {
       type="text"
       v-model="autor.nome"
       placeholder="Nome do autor"
+      required
     />
     <input
       class="inputEnviar"
@@ -55,10 +56,10 @@ export default {
   <hr />
   <table>
     <tr>
-      <th>Id do Autor</th>
-      <th>Nome</th>
-      <th>Email (Opcional)</th>
-      <th>Ação</th>
+      <th class="cabeça">Id do Autor</th>
+      <th class="cabeça">Nome</th>
+      <th class="cabeça">Email (Opcional)</th>
+      <th class="cabeça">Ação</th>
     </tr>
     <tr v-for="autor in autores" :key="autor.id">
       <td>{{ autor.id }}</td>

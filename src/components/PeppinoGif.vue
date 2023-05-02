@@ -1,29 +1,33 @@
 <script>
 export default {
-  props: ["fotoclick"],
+  data() {
+    return {
+      gifkey: 1,
+    };
+  },
+  props: ["fotoclick", "fotohover"],
+  methods: {
+    resetGif() {
+      this.gifkey += 1;
+    },
+  },
 };
 </script>
 
 <template>
-  <div class="peppino">
+  <div class="peppino" @mouseover="resetGif">
     <img
       class="peppino-default"
       src="https://static.wikia.nocookie.net/pizzatower/images/d/d2/Idle_demo1.gif/"
       alt="peppito"
     />
+    <img class="peppino-tchararam" :src="fotoclick" alt="click" id="tcharam" />
     <img
-      class="peppino-tchararam"
-      :src="fotoclick"
-      alt=""
-      id="tcharam"
-      onmousedown="document.getElementById('tcharam').src='{{ fotoclick }}';"
-    />
-    <img
-      onmouseover="document.getElementById('mamamia').src='https://static.wikia.nocookie.net/pizzatower/images/3/3f/OH_MAMA_MIA.gif/'"
       class="peppino-mamamia"
-      src="https://static.wikia.nocookie.net/pizzatower/images/3/3f/OH_MAMA_MIA.gif/"
-      alt=""
+      :src="fotohover"
+      alt="hover"
       id="mamamia"
+      :key="gifkey"
     />
   </div>
 </template>
@@ -31,18 +35,18 @@ export default {
 .peppino {
   display: inline-block;
   width: 70px;
-  height: 70px;
+  height: auto;
 }
 
 .peppino-default {
   width: 70px;
-  height: 70px;
+  height: auto;
   display: block;
 }
 
 .peppino:hover .peppino-default {
   width: 70px;
-  height: 70px;
+  height: auto;
   display: none;
 }
 
@@ -68,12 +72,12 @@ export default {
 
 .peppino-tchararam {
   width: 70px;
-  height: 70px;
+  height: auto;
   display: none;
 }
 .peppino-mamamia {
   width: 70px;
-  height: 70px;
+  height: auto;
   display: none;
 }
 </style>

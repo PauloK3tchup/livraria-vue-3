@@ -109,6 +109,11 @@ td, th {
   padding: 8px;
 }
 
+.cabeça {
+  font-weight: bolder;
+  background-color: black;
+}
+
 tr:nth-child(even) {
   background-color: #2c0000;
   border: 1px solid #dddddd;

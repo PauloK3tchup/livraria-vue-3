@@ -41,6 +41,7 @@ export default {
       type="text"
       v-model="categoria.descricao"
       placeholder="Descrição"
+      required
     />
     <button class="btn" @click="salvar">
       <font-awesome-icon icon="fa-solid fa-floppy-disk" /> <span>Salvar</span>
@@ -49,9 +50,9 @@ export default {
   <hr />
   <table>
     <tr>
-      <th>Id da Categoria</th>
-      <th>Descrição</th>
-      <th>Ação</th>
+      <th class="cabeça">Id da Categoria</th>
+      <th class="cabeça">Descrição</th>
+      <th class="cabeça">Ação</th>
     </tr>
     <tr v-for="categoria in categorias" :key="categoria.id">
       <td>{{ categoria.id }}</td>

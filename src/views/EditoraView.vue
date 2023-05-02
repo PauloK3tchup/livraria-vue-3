@@ -41,6 +41,7 @@ export default {
       type="text"
       v-model="editora.nome"
       placeholder="Nome da editora"
+      required
     />
     <input
       class="inputEnviar"
@@ -55,10 +56,10 @@ export default {
   <hr />
   <table>
     <tr>
-      <th>Id da Editora</th>
-      <th>Nome</th>
-      <th>Website (Opcional)</th>
-      <th>Ação</th>
+      <th class="cabeça">Id da Editora</th>
+      <th class="cabeça">Nome</th>
+      <th class="cabeça">Website (Opcional)</th>
+      <th class="cabeça">Ação</th>
     </tr>
     <tr v-for="editora in editoras" :key="editora.id">
       <td>{{ editora.id }}</td>

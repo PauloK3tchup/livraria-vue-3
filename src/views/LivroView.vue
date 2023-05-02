@@ -54,26 +54,30 @@ export default {
       type="text"
       v-model="livro.titulo"
       placeholder="Título do livro"
+      required
     />
     <input
       class="inputEnviar"
       type="text"
       v-model="livro.isbn"
       placeholder="ISBN do livro"
+      required
     />
     <input
       class="inputEnviar"
       type="number"
       v-model="livro.quantidade"
       placeholder="Quantidade do livro"
+      required
     />
     <input
       class="inputEnviar"
       type="number"
       v-model="livro.preco"
       placeholder="Preço do livro"
+      required
     />
-    <select v-model="livro.categoria" class="inputEnviar">
+    <select required v-model="livro.categoria" class="inputEnviar">
       <option disabled selected value="">Categoria</option>
       <option
         v-for="categoria in categorias"
@@ -83,13 +87,13 @@ export default {
         {{ categoria.descricao }}
       </option>
     </select>
-    <select v-model="livro.editora" class="inputEnviar">
+    <select required v-model="livro.editora" class="inputEnviar">
       <option disabled selected value="">Editora</option>
       <option v-for="editora in editoras" :key="editora.id" :value="editora.id">
         {{ editora.nome }}
       </option>
     </select>
-    <select v-model="livro.autor" class="inputEnviar">
+    <select required v-model="livro.autor" class="inputEnviar">
       <option disabled selected value="">Autor</option>
       <option v-for="autor in autores" :key="autor.id" :value="autor.id">
         {{ autor.nome }}
@@ -102,15 +106,15 @@ export default {
   <hr />
   <table>
     <tr>
-      <th>Id</th>
-      <th>Título</th>
-      <th>ISBN</th>
-      <th>Quantidade</th>
-      <th>Preço</th>
-      <th>Categoria</th>
-      <th>Editora</th>
-      <th>Autor</th>
-      <th>Ação</th>
+      <th class="cabeça">Id</th>
+      <th class="cabeça">Título</th>
+      <th class="cabeça">ISBN</th>
+      <th class="cabeça">Quantidade</th>
+      <th class="cabeça">Preço</th>
+      <th class="cabeça">Categoria</th>
+      <th class="cabeça">Editora</th>
+      <th class="cabeça">Autor</th>
+      <th class="cabeça">Ação</th>
     </tr>
     <tr v-for="livro in livros" :key="livro.id">
       <td>{{ livro.id }}</td>
