@@ -122,9 +122,9 @@ export default {
       <td>{{ livro.isbn }}</td>
       <td>{{ livro.quantidade }}</td>
       <td>{{ livro.preco }}</td>
-      <td>{{ livro.categoria.descricao }}</td>
-      <td>{{ livro.editora.nome }}</td>
-      <td>{{ livro.autor.nome }}</td>
+      <td>{{ livro.categorias }}</td>
+      <td>{{ livro.editora }}</td>
+      <td>{{ livro.autores }}</td>
       <td>
         <button class="btn-excluir" @click="excluir(livro)">
           <font-awesome-icon icon="fa-trash" /> <span>Excluir</span>
